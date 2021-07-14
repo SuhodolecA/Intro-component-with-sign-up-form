@@ -1,0 +1,202 @@
+// font-family: 'Poppins', sans-serif;
+// === variables ===
+$red: hsl(0, 100%, 74%);
+$green: hsl(154, 59%, 51%);
+$blue: hsl(248, 32%, 49%);
+$dark-blue: hsl(249, 10%, 26%);
+$grayish-blue: hsl(246, 25%, 77%);
+// === / variables ===
+
+// === common styles ===
+:root {
+    box-sizing: border-box;
+    font-size: 10px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.6rem;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+// === / common styles ===
+
+.signup-wrapper {
+    display: flex;
+    align-items: center;
+    background: $red url('/images/bg-intro-desktop.png');
+    width: 100%;
+    max-width: 144rem;
+    padding: 7.5rem 1.5rem;
+
+    @media (max-width: 60em) {
+        flex-direction: column;
+    }
+}
+
+.signup-content {
+    flex-basis: 50%;
+    text-align: center;
+    margin-bottom: 6rem;
+
+    &-container {
+        max-width: 50rem;
+        margin: 0 auto;
+    }
+
+    &__title {
+        color: #f8fffe;
+        font-size: 3.8rem;
+        line-height: 1.1;
+        margin-bottom: 3.5rem;
+
+        @media (max-width: 60em) {
+            font-size: 3rem;
+        }
+    }
+
+    &__text {
+        color: #ffefec;
+        
+        @media (max-width: 60em) {
+            font-size: 1.5rem;
+            line-height: 1.6;
+        }
+    }
+}
+
+.signup-form {
+    flex-basis: 50%;
+
+
+    &__banner {
+        background: $blue;
+        text-align: center;
+        color: #f8fffe;
+        font-weight: 700;
+        border-radius: .7rem;
+        box-shadow: 0 .6rem 0 0 hsla(249, 10%, 26%, .3);
+        margin-bottom: 2rem;
+        padding: 2rem 9rem;
+        font-size: 1.4rem;
+        max-width: 54rem;
+
+        .thin-font {
+            font-weight: 300;
+        }
+    }
+
+    &-inner {
+        padding: 4rem;
+        background: #fff;
+        border-radius: .7rem;
+        max-width: 54rem;
+        box-shadow: 0 .6rem 0 0 hsla(249, 10%, 26%, .3);
+    }
+
+    .input {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 2rem;
+
+        label {
+            position: absolute;
+            z-index: -10;
+            opacity: 0;
+        }
+
+        .error-icon {
+            position: absolute;
+            right: 2.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            display: none;
+        }
+
+        .attention-text {
+            position: absolute;
+            right: 0;
+            bottom: -2.5rem;
+            color: $red;
+            font-size: 1.3rem;
+            font-style: italic;
+            font-weight: 500;
+            display: none;
+        }
+
+        .field {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            padding: 1.45rem 3rem;
+            width: 100%;
+            border: 2px solid #dedede;
+            border-radius: .5rem;
+            color: #37363b;
+            outline: none;
+
+            &::placeholder {
+                font-family: 'Poppins', sans-serif;
+                font-size: 1.6rem;
+                font-weight: 600;
+                color: #6d6d6f;
+            }
+
+            &:focus {
+                border-color: transparent;
+                box-shadow: 0 0 0 1px $blue;
+            }
+
+            &:focus::placeholder {
+                opacity: 0;
+            }
+        }
+
+    }
+
+    &__submit {
+        &-btn {
+            width: 100%;
+            text-transform: uppercase;
+            color: #ffefec;
+            font-weight: 600;
+            padding: 2rem 0 1.6rem 0;
+            background: $green;
+            border: 0;
+            border-radius: .5rem;
+            cursor: pointer;
+            margin-bottom: 1.6rem;
+            box-shadow: 0 .4rem 0 0 hsla(249, 10%, 26%, .3);
+            transition: all .2s linear;
+
+            &:active {
+                box-shadow: 0 .2rem 0 0 hsla(249, 10%, 26%, .3);
+            }
+        }
+    }
+
+    &__terms {
+        text-align: center;
+        font-size: 1.1rem;
+        color: $grayish-blue;
+        font-weight: 600;
+
+        &-link {
+            text-decoration: none;
+            color: $red;
+        }
+
+    }
+}
