@@ -1,5 +1,7 @@
 # Frontend Mentor - Intro component with sign up form
 
+[Link to solution](https://intro-component-with-sign-up-form-rho.vercel.app/)
+
 ![Design preview for the Intro component with sign up form coding challenge](./design/desktop-preview.jpg)
 
 ## Welcome! 👋
